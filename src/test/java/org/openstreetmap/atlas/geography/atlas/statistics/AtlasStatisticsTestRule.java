@@ -8,6 +8,7 @@ import org.openstreetmap.atlas.utilities.testing.TestAtlas;
  * Test rule for {@link AtlasStatisticsTest}
  *
  * @author matthieun
+ * @author patrick-mi
  */
 public class AtlasStatisticsTestRule extends CoreTestRule
 {
@@ -22,6 +23,9 @@ public class AtlasStatisticsTestRule extends CoreTestRule
 
     @TestAtlas(loadFromJosmOsmResource = "refsAtlas.josm.osm")
     private Atlas refsAtlas;
+
+    @TestAtlas(loadFromJosmOsmResource = "aoiAtlas.josm.osm")
+    private Atlas aoiAtlas;
 
     public Atlas getAddressAtlas()
     {
@@ -42,4 +46,6 @@ public class AtlasStatisticsTestRule extends CoreTestRule
     {
         return this.waterAtlas;
     }
+
+    public Atlas getAoiAtlas() { return this.aoiAtlas; }
 }
